@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xmlns:util="http://www.springframework.org/schema/util"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ 					http://www.springframework.org/schema/beans/spring-beans.xsd
+  					http://www.springframework.org/schema/util
+         		    http://www.springframework.org/schema/util/spring-util-3.1.xsd">
+           
+     <util:list list-class="java.util.LinkedList" id="bestfriends">
+     	<value>gautam</value>
+     	<value>bhavya</value>
+     	<value>aman</value>
+     	<value>sagar</value>
+     	<value>aditya</value>
+     </util:list>
+     
+     <util:map map-class="java.util.HashMap" id="HashMap">
+     	<entry key="java" value="8000"/>
+     	<entry key="python" value="8000"/>
+     	<entry key="c/c++" value="8000"/>
+     	<entry key="hibernate" value="8000"/>
+     
+     </util:map>
+
+<bean class="com.SpringCore.StandAlone.Collection.person" name="person1">
+		<property name="friends" ref="bestfriends"></property>
+		<property name="feestructure" ref="HashMap"></property>
+
+		<!--  <property name="friends">
+			<ref bean="bestfriends"/>
+		</property>	
+		-->
+
+</bean>
+</beans>

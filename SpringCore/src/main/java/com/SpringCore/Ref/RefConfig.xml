@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean class="com.SpringCore.Ref.b" name="B">
+<property name="y" value="124"/>
+
+</bean>
+
+<bean class="com.SpringCore.Ref.A" name="Aref">
+<!-- or you can write with property 
+<propert name="ob" ref="B"/> -->
+<property name="x">
+<value>145</value>
+</property>
+<property name="ob">
+	<ref bean="B"/>
+</property>
+
+
+<!-- to use ref with bean tag you have to write the syntax as 
+<bean class="com.SpringCore.Ref.A" name="Aref" p:x="145" p:ob-ref="B"/>
+-->
+
+
+
+</bean>
+</beans>
